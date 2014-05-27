@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+		<link rel="shortcut icon" href="/img/shortcut.png">
+		<title>Bible Study</title>
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for jumbotron -->
+		<link href="css/jumbotron.css" rel="stylesheet">
+		<style>
+			.dropdown-menu a{color:DarkGrey;}
+			.dropdown-menu a.active{color:#563d7c;font-weight:bold;}
+		</style>
+	</head>
+
+	<body>
+		<!-- banner -->
+		<div class="jumbotron">
+			<div class='container'>
+				<div class = 'col-md-60 row'>
+					<h2> Verse of the Day</h2>
+					<div>
+						<strong>
+							<!-- Others -->
+							<script type="text/javascript" language="JavaScript" src="http://www.biblegateway.com/votd/votd.write.callback.js"> 
+							</script>
+							<script type="text/javascript" language="JavaScript" src="http://www.biblegateway.com/votd/get?format=json&version=NIV&callback=BG.votdWriteCallback"> 
+							</script>
+							<!-- alternative for no javascript -->
+							<noscript>
+							<iframe framespacing="0" frameborder="no" src="http://www.biblegateway.com/votd/get?format=html&version=NIV">View Verse of the Day</iframe> 
+							</noscript>
+						</strong>
+					</div>
+				</div>
+				<div id='form'  class = 'col-md-60 row'>
+					<div style="margin-top:5%" id = 'logLink' class = 'row'>
+						<div class = 'col-md-10'>
+							<span id= 'logIcon' class="label label-info" style="cursor: pointer">Getting Started</span>
+						</div>
+						<form class="form-signin col-md-12" role="form" id = 'logForm' style="display:none">
+							<input id='logEmail' type="email" class="form-control" placeholder="Email address" required autofocus>
+							<input id='logPassword' type="password" class="form-control" placeholder="Password" required>
+							<button type = 'submit' class="btn btn-sm btn-primary navbar-right"><span class="glyphicon glyphicon-play"></span></button>
+						</form>
+					</div>
+					<div style="margin-top:5%" id = 'regLink' class = 'row'>
+						<div class = 'col-md-10'>
+							<span id= 'registerIcon' class="label label-default" style="cursor: pointer">Register</span>
+						</div>
+						<form class="form-signin col-md-12" role="form" id = 'regForm' style="display:none">
+							<input id="regEmail" type="email" class="form-control" placeholder="Email address" required autofocus>
+							<input id="regPassword" type="password" class="form-control" placeholder="Password" required>
+							<button type = 'submit' class="btn btn-sm btn-primary navbar-right"><span class="glyphicon glyphicon-play"></span></button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id = 'content' class = 'container' style='display:none'>
+		</div>
+		<!-- Placed at the end of the document so the pages load faster -->
+		<!-- jQuery -->
+		<script src="js/jquery.js"></script>
+		<!-- Bootstrap core JavaScript-->		
+		<script src="js/bootstrap.js"></script>	
+		<script src="js/demo.js"></script>	
+	</body>
+</html>
