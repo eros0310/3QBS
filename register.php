@@ -2,6 +2,7 @@
 	$username = rtrim($_POST['name']);
 	$pwd = rtrim($_POST['pwd']);
 	$filename = '/var/www/html/user/'.$username.'.txt';
+	chmod($filename, 0777);
 	if(is_file($filename)){
 		echo 0;
 	}
