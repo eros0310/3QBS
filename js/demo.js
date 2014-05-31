@@ -1,4 +1,4 @@
-$(document).ready(function(){
+﻿$(document).ready(function(){
 	//for new users
 	$('#regForm').on('submit', function (e){
 		e.preventDefault();
@@ -12,7 +12,7 @@ $(document).ready(function(){
 			type: 'POST',
 			success: function(response){
 				if(response == 0){
-					alert('user already existed !!');
+					alert('用戶名已存在！');
 				}
 				else{
 					//start-up function for every user
@@ -20,7 +20,7 @@ $(document).ready(function(){
 				}
 			},
 			error: function(response){
-				alert('An error has occurred, please refresh your page and try again.');
+				alert('有錯誤發生，請刷新頁面后重試。');
 			},
 			cache: false,
 			data:{name:username, pwd:password}
@@ -53,10 +53,10 @@ $(document).ready(function(){
 			success: function(response){
 				//check validation
 				if(response == 0){
-					alert('User does not exist !!');
+					alert('用戶名不存在！');
 				}
 				else if (response == 1){
-					alert('Password does not match !!');
+					alert('密碼和用戶名不符合！');
 				}
 				else{
 					//start-up function for every user
@@ -64,7 +64,7 @@ $(document).ready(function(){
 				}
 			},
 			error: function(response){
-				alert('An error has occurred, please refresh your page and try again.');
+				alert('有錯誤發生，請刷新頁面后重試。');
 			},
 			cache: false,
 			data:{name:username, pwd:password}
@@ -72,18 +72,9 @@ $(document).ready(function(){
 	});
 	//start up function for every user
 	function boot(username){
-		$.ajax({
-			url: 'demo3.html',
-			success: function(response){
-				$('#content').html(response);
-				$('#form').fadeOut();
-				$('#content').fadeIn();
-				loadContent(username);
-			},
-			error: function(response){
-				alert('An error has occurred, please refresh your page and try again.');
-			}
-		});
+		$('#form').fadeOut();
+		$('#content').fadeIn();
+		loadContent(username);
 	}
 	//display progress
 	function loadContent(username){
@@ -115,7 +106,7 @@ $(document).ready(function(){
 				}
 			},
 			error: function(){
-				alert('An error has occurred, please refresh your page and try again.');
+				alert('有錯誤發生，請刷新頁面后重試。');
 			},
 			cache: false,
 			data:{name:username}
@@ -148,7 +139,7 @@ $(document).ready(function(){
 		var userAnwser = target.find('textarea')[0].value.length;
 		var answer = target.find('.answer').text().length;
 		if(answer*0.6 >= userAnwser){
-			alert('You might want to elaborate on your anwser first ??');
+			alert('請先完善你的答案');
 		}
 		else{
 			$(this).closest('.panel-body').find('.answer').slideToggle();
@@ -161,7 +152,7 @@ $(document).ready(function(){
 		var userAnwser = target1.find('textarea')[0].value.length;
 		var answer = target1.find('.answer').text().length;
 		if(answer*0.6 >= userAnwser){
-			alert('You might want to elaborate on your anwser first ??');
+			alert('請先完善你的答案');
 		}
 		else{
 			var target2 = $(this).closest('.courseContent');
@@ -204,17 +195,17 @@ $(document).ready(function(){
 			success: function(response){
 			},
 			error: function(response){
-				alert('An error has occurred, please refresh your page and try again.');
+				alert('有錯誤發生，請刷新頁面后重試。');
 			},
 			cache: false,
 			data:{data:content, name:username},
 			complete: function(){
-				alert('Saving completed.');
+				alert('保存成功。');
 			}
 		});
 	});
 	//on exit save progress
 	$(window).bind('beforeunload', function(){
-		return 'Make sure you save your progress before exiting.';
+		return '離開頁面之前請確認已經保存';
 	});
 })
