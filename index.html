@@ -3,70 +3,59 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-		<link rel="shortcut icon" href="/img/shortcut.png">
-		<title>聖經學習</title>
+		<link rel="shortcut icon" href="/img/3qbs_57.png">
+        <link href="img/3qbs_57.png" rel="apple-touch-icon" />
+<link href="img/3qbs_72.png" rel="apple-touch-icon" sizes="72x72" />
+<link href="img/3qbs_114.png" rel="apple-touch-icon" sizes="114x114" />
+<link href="img/3qbs_144.png" rel="apple-touch-icon" sizes="144x144" />
+		<title>三问法读经</title>
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap.css" rel="stylesheet">
-		<!-- Custom styles for jumbotron -->
-		<link href="css/jumbotron.css" rel="stylesheet">
 		<style>
 			.dropdown-menu a{color:DarkGrey;}
 			.dropdown-menu a.active{color:#563d7c;font-weight:bold;}
+			.panel-body {background-color:#f5f5f5;}
+			<!-- Move down content because we have a fixed navbar that is 50px tall-->
+			body{padding-top: 50px;}
 		</style>
 	</head>
 	<body>
 		<!-- banner -->
 		<div class="jumbotron">
 			<div class='container'>
-				 <div class="col-md-25 row"> 
-                     <img src="img/3qbs.jpg"/>
-                    </div>
-				<div class="col-md-35 row">
-                   
-                    <hgroup>
-                        <h1>3Q Bible Study</h1>
-                        <h1>三問法讀經</h1>
-                        
-                    </hgroup>
-                   
+				<!-- logo -->
+				<div class="col-md-20 row"> 
+					<img src="img/3qbs.jpg"/>
                 </div>
+				<!-- title -->
+				<div class="col-md-40 row">
+					<hgroup><h1>3Q Bible Study</h1><h1>三問法讀經</h1></hgroup>
+                </div>
+				<!-- details -->
                 <div class="col-md-60 row">
-                 <br><p>这灵修資料是為初信的弟兄姊妹寫的.  希望使用的人能更深認識神, 並養成良好習慣每天讀聖经祷告親近神.<br>
-“三問法” 是陸蘇河教授去年寫的新書.  十分簡單, 但能使人对自己和对神有更清楚的認識, 更明白衪的旨意, 並將所学应用在日常生活中.<br>
-路加福音有24章.  编者在每章選了一小段, 希望15-20分鈡內能看完.  每週做六課, 連續做四週.<br>
-願主賜福與你!
-</p></div>
-               <!-- <div class = 'col-md-60 row'>
-					<h2> Verse of the Day</h2>
-					<div>
-						<strong>
-							 
-							<script type="text/javascript" language="JavaScript" src="http://www.biblegateway.com/votd/votd.write.callback.js"> 
-							</script>
-							<script type="text/javascript" language="JavaScript" src="http://www.biblegateway.com/votd/get?format=json&version=NIV&callback=BG.votdWriteCallback"> 
-							</script>
-							
-							<noscript>
-							<iframe framespacing="0" frameborder="no" src="http://www.biblegateway.com/votd/get?format=html&version=NIV">View Verse of the Day</iframe> 
-							</noscript>
-						</strong>
-					</div>
-				</div>-->
+					<br><p>这灵修資料是為初信的弟兄姊妹寫的。希望使用的人能更深認識神，並養成良好習慣每天讀聖经祷告親近神。<br>“三問法” 是陸蘇河教授去年寫的新書。十分簡單，但能使人对自己和对神有更清楚的認識，更明白衪的旨意，並將所学应用在日常生活中。<br>路加福音有24章。编者在每章選了一小段，希望15-20分鈡內能看完.  每週做六課, 連續做四週。<br>願主賜福與你！
+					</p>
+				</div>
 				<div id='form' class = 'col-md-60 row'>
 					<div style="margin-top:5%" id = 'logLink' class = 'row'>
+						<!-- sign in link -->
 						<div class = 'col-md-10'>
 							<h4><span id= 'logIcon' class="label label-info" style="cursor: pointer">登入</span></h4>
 						</div>
+						<!-- sign in form -->
 						<form class="form-signin col-md-12" role="form" id = 'logForm' style="display:none">
 							<input id='logEmail' type="email" class="form-control" placeholder="電子郵件" required autofocus>
 							<input id='logPassword' type="password" class="form-control" placeholder="密碼" required>
+							<a id='retrievePwd'style='cursor:pointer'>忘記密碼？</a>
 							<button type = 'submit' class="btn btn-sm btn-primary navbar-right"><span class="glyphicon glyphicon-play"></span></button>
 						</form>
 					</div>
 					<div style="margin-top:5%" id = 'regLink' class = 'row'>
+						<!-- reg link -->
 						<div class = 'col-md-10'>
 							<h4><span id= 'registerIcon' class="label label-default" style="cursor: pointer">註冊</span></h4>
 						</div>
+						<!-- registeration form -->
 						<form class="form-signin col-md-12" role="form" id = 'regForm' style="display:none">
 							<input id="regEmail" type="email" class="form-control" placeholder="電子郵件" required autofocus>
 							<input id="regPassword" type="password" class="form-control" placeholder="密碼" required>
@@ -76,31 +65,43 @@
 				</div>
 			</div>
 		</div>
+		<!-- /.banner -->
 		<div id = 'content' class = 'container' style='display:none' ng-controller="LessonListCtrl">
+			<!-- navbar -->
 			<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
 				<div class="container">
+					<!-- following buttons will show under collapsed mode -->
+					<button class="navbar-toggle" style='color:white'>
+						保存
+					</button>
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!-- placeholder for username -->
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="#"></a>
+						<a class="navbar-brand" style="font-size:12px" href="#"></a>
 					</div>
-					<div class="collapse navbar-collapse bs-example-js-navbar-collapse">
+					<!-- following buttons will be hide under collapse button on small devices -->
+					<div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
 						<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown">
 								<a id="save" role="button" href="#">保存</a>
 							</li>
 							<li class="dropdown">
-								<a id="lessonList" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
-								<ul class="dropdown-menu" role="menu" aria-labelledby="lessonList">
-									<li class='list' role="presentation" ng-repeat="lesson in lessons"><a role="menuitem" tabindex="-1" style='cursor:pointer'>{{lesson.name}}</a>
+								<a id="lessonList" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">課程 <b class="caret"></b></a>
+								<ul class="dropdown-menu" style='height:600px;overflow:scroll;' role="menu" aria-labelledby="lessonList">
+									<li class='list' role="presentation" ng-repeat="lesson in lessons"><a role="menuitem" tabindex="-1" style='cursor:pointer' href='#{{lesson.id}}'>{{lesson.name}}</a>
 										<ul role="menu" class='sublist' style='list-style-type:none;display:none;cursor:pointer'>
-											<li><a>{{lesson.question1}}</a></li>
-											<li><a>{{lesson.question2}}</a></li>
-											<li><a>{{lesson.question3}}</a></li>
+											<li><a href='#{{lesson.id}}Q1'>{{lesson.question1}}</a></li>
+											<li><a href='#{{lesson.id}}Q2'>{{lesson.question2}}</a></li>
+											<li><a href='#{{lesson.id}}Q3'>{{lesson.question3}}</a></li>
+											<li><a href='#{{lesson.id}}keyLine'>金句</a></li>
+											<li><a href='#{{lesson.id}}think'>默想</a></li>
+											<li><a href='#{{lesson.id}}pray'>禱告</a></li>
+											<li><a href='#{{lesson.id}}Q4'>我的回應</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -109,57 +110,101 @@
 					</div><!-- /.nav-collapse -->
 				</div><!-- /.container -->
 			</div>
+			<!-- actual course content -->
 			<div class='container'>
-				<div class='col-md-60' role='main' ng-repeat="lesson in lessons">
-					<section>
-						<div class='page-header'>
-							<h1>{{lesson.name}}<small>{{lesson.verse}}<span class="glyphicon glyphicon-chevron-down navbar-right" style="cursor: pointer;"></span><span class="glyphicon glyphicon-chevron-up navbar-right" style="cursor: pointer;">&nbsp;</span></small></h1>
-							<div class = 'progress row'>
+				<div class='col-xs-60 col-md-60' role='main' ng-repeat="lesson in lessons">
+					<!-- each section contains one lesson -->
+					<section id='{{lesson.id}}' style="padding-top: 50px; margin-top: -50px;">
+						<!-- lesson name along with a progress bar -->
+						<div class='row page-header' id='{{lesson.id}}' style='cursor:pointer'>
+							<a class='showContent' ><h1 class='col-xs-60'>{{lesson.name}}</h1><h1 class='col-xs-60'><small>{{lesson.verse}}</small></h1></a>
+							<div class = 'progress row' style='display:none'>
 								<div class = 'progress-bar progress-bar-info' role='progressbar' aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style='width:0%'>
 								</div>
 							</div>
 						</div>
 						<div class='row courseContent' style='display:none'>
+							<!-- reading -->
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h3 class="panel-title">{{lesson.reading}}</h3>
 								</div>
 								<div class="panel-body">{{lesson.content}}</div>
-								<div class="panel-heading">
+								<!-- question 1 -->
+								<div class="panel-heading" id='{{lesson.id}}Q1'style="padding-top: 50px; margin-top: -50px;">
 									<h2><small>{{lesson.question1}}</small></h2>
 									<h3 class="panel-title"><strong>{{lesson.q1}}</strong></h3>
 								</div>
-								<div class="panel-body lesson1Q1">
-									<textarea align='left' class='col-md-60'></textarea>
-									<div class=' row col-md-60'>
+								<!-- answer area -->
+								<div class="panel-body">
+									<textarea align='left' class='col-md-60' style='display:none'></textarea>
+									<div class=' row col-md-60' style='display:none'>
 										<span id= 'submit' class="label label-info" style="cursor: pointer;">確認提交</span>
 										<span id= 'showAnswer' class="label label-default" style="cursor: pointer;">查看答案</span>
 										</div>
-									<div class='answer row' style='display:none'>{{lesson.answer1}}</div>
+									<div class='answer col-md-60 row'>{{lesson.answer1}}</div>
 								</div>
-								<div class="panel-heading">
+								<!-- question 2 -->
+								<div class="panel-heading" id='{{lesson.id}}Q2'style="padding-top: 50px; margin-top: -50px;">
 									<h2><small>{{lesson.question2}}</small></h2>
 									<h3 class="panel-title"><strong>{{lesson.q2}}</strong></h3>
 								</div>
-								<div class="panel-body lesson1Q2">
-									<textarea align='left' class='col-md-60'></textarea>
-									<div class=' row col-md-60'>
+								<!-- answer area -->
+								<div class="panel-body">
+									<textarea align='left' class='col-md-60' style='display:none'></textarea>
+									<div class=' row col-md-60' style='display:none'>
 										<span id= 'submit' class="label label-info" style="cursor: pointer;">確認提交</span>
 										<span id= 'showAnswer' class="label label-default" style="cursor: pointer;">查看答案</span>
 									</div>
-									<div class='answer row' style='display:none'>{{lesson.answer2}}</div>
+									<div class='answer col-md-60 row'>{{lesson.answer2}}</div>
 								</div>
-									<div class="panel-heading">
+								<!-- question 3 -->
+								<div class="panel-heading" id='{{lesson.id}}Q3'style="padding-top: 50px; margin-top: -50px;">
 									<h2><small>{{lesson.question3}}</small></h2>
 									<h3 class="panel-title"><strong>{{lesson.q3}}</strong></h3>
 								</div>
-								<div class="panel-body lesson1Q3">
-									<textarea align='left' class='col-md-60'></textarea>
-									<div class=' row col-md-60'>
+								<!-- answer area -->
+								<div class="panel-body">
+									<textarea align='left' class='col-md-60' style='display:none'></textarea>
+									<div class=' row col-md-60' style='display:none'>
 										<span id= 'submit' class="label label-info" style="cursor: pointer;">確認提交</span>
 										<span id= 'showAnswer' class="label label-default" style="cursor: pointer;">查看答案</span>
 									</div>
-										<div class='answer row' style='display:none'>{{lesson.answer3}}</div>
+										<div class='answer col-md-60 row'>{{lesson.answer3}}</div>
+								</div>
+								<!-- key line -->
+								<div class="panel-heading " id='{{lesson.id}}keyLine'style="padding-top: 50px; margin-top: -50px;">
+									<h2><small>金句</small></h2>
+								</div>
+								<div class="panel-body">
+									<div class='keyLine col-md-60 row'>{{lesson.keyLine}}</div>
+								</div>
+								<!-- thinking -->
+								<div class="panel-heading " id='{{lesson.id}}think'style="padding-top: 50px; margin-top: -50px;">
+									<h2><small>默想</small></h2>
+								</div>
+								<div class="panel-body">
+									<div class='think col-md-60 row'>{{lesson.think}}</div>
+								</div>
+								<!-- pray -->
+								<div class="panel-heading " id='{{lesson.id}}pray'style="padding-top: 50px; margin-top: -50px;">
+									<h2><small>禱告</small></h2>
+								</div>
+								<div class="panel-body">
+										<div class='pray col-md-60 row'>{{lesson.pray}}</div>
+								</div>
+								<!-- question 4 -->
+								<div class="panel-heading " id='{{lesson.id}}Q4'style="padding-top: 50px; margin-top: -50px;">
+									<h2><small>我的回應</small></h2>
+								</div>
+								<!-- answer area -->
+								<div class="panel-body">
+									<textarea align='left' class='col-md-60'></textarea>
+									<div class=' row col-md-60' style='display:none'>
+										<span id= 'submit' class="label label-info" style="cursor: pointer;">確認提交</span>
+										<span id= 'showAnswer' class="label label-default" style="cursor: pointer;">查看答案</span>
+									</div>
+										<div class='myResponse col-md-60 row'>{{lesson.myResponse}}</div>
 								</div>
 							</div>
 						</div>

@@ -1,4 +1,59 @@
-﻿$(document).ready(function(){
+$(document).ready(function(){
+	//on page load first to check if cookie exists
+	getCookie();
+	//click sections on dropdwon list will jump the current window to that section
+	$('.sublist').on('click', 'a', function(e){
+		e.preventDefault();
+		var target = $(this).attr('href').trim();
+		if(!($(target)).is(':visible')){
+			$(target).closest('.courseContent').show(400, function(){
+				window.location.hash = target.substring(1);
+			});
+		}
+	})
+	//set cookie containing username and password
+	function setCookie(name, val) {
+		var d = new Date();
+		d.setTime(d.getTime() + (3*24*60*60*1000));
+		var expires = "expires="+d.toGMTString();
+		document.cookie = name + "=" + val + "; " + expires;
+	}
+	//get cookie if any exists
+	function getCookie() {
+		var name = 'biblestudy=';
+		var ca = document.cookie.split(';');
+		for(var i=0; i<ca.length; i++) {
+			var c = ca[i].trim();
+			if (c.indexOf(name) == 0){
+				cookieContent = c.substring(name.length,c.length).split('===');
+				boot(cookieContent[0].trim());
+			}
+		}
+	}
+	//for password retrieval
+	$('#retrievePwd').on('click', function(){
+		var address = prompt("請輸入你的電子郵箱地址");
+		if (address != null){
+			//Server script to process data
+			$.ajax({
+				url: 'pwdRecover.php',
+				type: 'POST',
+				success: function(response){
+					if(response == 0){
+						alert('用戶名不存在！');
+					}
+					else{
+						alert("請注意查收郵件。");
+					}
+				},
+				error: function(response){
+					alert('有錯誤發生，請刷新頁面后重試。');
+				},
+				cache: false,
+				data:{add:address}
+			});
+		}
+	})
 	//for new users
 	$('#regForm').on('submit', function (e){
 		e.preventDefault();
@@ -6,11 +61,13 @@
 		//Clientside validation handled automatically
 		var	username = $('#regEmail').val();
 		var	password = $('#regPassword').val();
+		setCookie('biblestudy', username+'==='+password);
 		//Server script to process data
 		$.ajax({
 			url: 'register.php',
 			type: 'POST',
 			success: function(response){
+				console.log(response);
 				if(response == 0){
 					alert('用戶名已存在！');
 				}
@@ -46,6 +103,7 @@
 		//Clientside validation handled automatically
 		var	username = $('#logEmail').val();
 		var	password = $('#logPassword').val();
+		setCookie('biblestudy', username+'==='+password);
 		//Server script to process data
 		$.ajax({
 			url: 'userValidation.php',
@@ -72,7 +130,7 @@
 	});
 	//start up function for every user
 	function boot(username){
-		$('#form').fadeOut();
+		$('.jumbotron').fadeOut();
 		$('#content').fadeIn();
 		loadContent(username);
 	}
@@ -120,13 +178,9 @@
 	$('#registerIcon').on('click', function(){
 		$('#regForm').fadeToggle();
 	});
-	//Hide lesson
-	$('body').on('click', '.glyphicon-chevron-up', function(){
-		$(this).closest('section').find('.courseContent').slideUp()
-	});
-	//Display lesson
-	$('body').on('click', '.glyphicon-chevron-down', function(){
-		$(this).closest('section').find('.courseContent').slideDown()
+	//Display/Hide lesson
+	$('body').on('click', '.page-header', function(){
+		$(this).closest('section').find('.courseContent').slideToggle()
 	});
 	//dropdown
 	$('body').on('click', '#lessonList', function(){
@@ -205,7 +259,7 @@
 		});
 	});
 	//on exit save progress
-	$(window).bind('beforeunload', function(){
+	$(window).on('beforeunload', function(){
 		return '離開頁面之前請確認已經保存';
 	});
 })

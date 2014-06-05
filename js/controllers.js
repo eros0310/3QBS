@@ -6,7 +6,7 @@ var bibleStudy = angular.module('bibleStudy', []);
 
 bibleStudy.controller('LessonListCtrl', function($scope) {
   $scope.lessons = [
-    {'name': '第1課   童女怀孕生聖子',
+    {'id': 'lesson1','name': '第1課   童女怀孕生聖子',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -24,7 +24,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'天父, 感謝祢愛我, 將祢的独生子賜給我, 把我从罪中拯救出来.  我願意信靠主耶穌.   幫助我也能尊主為大, 以神為樂!  奉主耶穌的名求, 啊们.',
      'myResponse':''
     },
-    {'name': '第2課   牧羊人傳喜信',
+    {'id': 'lesson2','name': '第2課   牧羊人傳喜信',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -42,7 +42,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'天父, 感謝祢, 因為祢不看人的外貌, 卻看人的內心.  不喜愛祭祀, 卻喜悅人听从祢的話.  感謝祢, 因祢的命令是清楚的.  幫助我有一个受教的心,乐意遵行祢的話.  奉主耶稣的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第3課   結出果子與悔改的心相稱',
+    {'id': 'lesson3','name': '第3課   結出果子與悔改的心相稱',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -60,7 +60,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'主耶稣, 感謝祢,  給我们留下榜样, 接受洗礼. 又应証了神是三位一体, 全知, 全能, 全善.  我願意信靠祢.  奉祢的名祷告, 啊們.',
      'myResponse':''
     },
-    {'name': '第4課   勝过試探的秘訣',
+    {'id': 'lesson4','name': '第4課   勝过試探的秘訣',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -73,13 +73,12 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
 	 'answer1': '中國有句名言, “人為財死, 鳥為食亡”.   其实人因為食色, 錢財, 名利, …受很多誘惑, 一不小心, 做出很多錯事, 影响一生.',
 	 'answer2': '魔鬼在三方面試探耶穌: a.	耶稣餓了, 魔鬼叫衪吩咐石頭變成食物.  耶稣引用圣经的話抵挡他,  “人活着不是單靠食物, 乃是靠神口里所出的一切話.”  (申命記 8:3) b.	魔鬼領耶稣上了高山, 叫耶稣拜他.  他会將一切权柄榮华都給耶稣.耶稣引用圣经的話說, “当拜主你的神, 單要事奉衪.” (申命記6:13). c.	魔鬼又領耶稣到耶路撒冷的殿頂上, 叫衪跳下去, 因為天使会保护衪耶稣引用圣经的話說, “不可試探主祢的神.”  (申命記6:16) 每一次耶稣都沒有妥協, 沒有逃避, 沒有靠自己的聰明, 能力去应对.  每一次衪都用神的話.  魔鬼見他輸了, 就暫時离去. ',
 	 'answer3': '耶稣給我们留下美好的榜样,  靠着圣灵所賜的能力, 用神的話語, 我们是可以勝过試探的. ',
-     'keyLine':' “你们落在百般的試煉中, 都要以為大喜乐.  因為知道你们的信心經过試 驗, 就生忍耐, 但忍耐也当成功, 使你们成全完备, 毫無缺欠.”  雅各書1:2-4
-',
+     'keyLine':' “你们落在百般的試煉中, 都要以為大喜乐.  因為知道你们的信心經过試 驗, 就生忍耐, 但忍耐也当成功, 使你们成全完备, 毫無缺欠.”  雅各書1:2-4',
      'think':['你遇到什麽的試探?  你用什麽方法去勝过?  向耶稣学習吧!'],
      'pray':'天父,感謝祢, 我知道無論在何环境, 祢都与我同在, 求祢保守我脫离那恶者, 賜我智慧能力勝过試探. 奉主耶穌的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第5課   身心灵得医治',
+    {'id': 'lesson5','name': '第5課   身心灵得医治',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -97,7 +96,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':' 天父,感謝祢, 祢是信实公義的, 当我们認罪時, 必赦免我们.  幫助我们愿意离棄罪恶, 过圣潔的生活.奉主耶穌的名求, 啊們',
      'myResponse':''
     },
-    {'name': '第6課   無條件的愛',
+    {'id': 'lesson6','name': '第6課   無條件的愛',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -115,7 +114,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'天父,感謝祢先愛了我, 又叫我们要彼此相爱, 並爱仇敵.  幫助我常思念祢捨己無條件的愛, 賜我一个願意遵行祢命令的心, 賜我力量去行祢所喜悦的事.  奉主耶穌的名求, 啊們',
      'myResponse':''
     },
-    {'name': '第7課  赦免與愛',
+    {'id': 'lesson7','name': '第7課  赦免與愛',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -133,7 +132,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'天父,感謝祢, 用愛尋找我, 因信靠耶稣, 祢給我福份作祢的兒女.  我願意用愛來回应祢. 奉主耶穌的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第8課   撒种的比喻',
+    {'id': 'lesson8','name': '第8課   撒种的比喻',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -151,7 +150,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'天父,感謝祢, 讓我有机会听到神的話.  求祢保守我的心, 讓祢的話在我心里有根有基, 不断成長, 有一天能結出好果. 奉主耶穌的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第9課   作门徒的代价',
+    {'id': 'lesson9','name': '第9課   作门徒的代价',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -169,7 +168,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'天父,感謝祢, 祢呼召我跟隨祢, 做祢的门徒.  我很軟弱, 求祢加我力量和信心, 学習捨己, 天天背起我的十字架耒跟从祢.  奉主耶穌的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第10課   好鄰舍',
+    {'id': 'lesson10','name': '第10課   好鄰舍',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -187,7 +186,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'天父感謝祢愛我, 主耶稣感謝祢為我死, 我願意相信祢. 我知道我有永生.  幫助我盡心盡性盡力盡意愛祢, 也愛我的鄰舍.  奉主耶稣的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第11課   主祷文',
+    {'id': 'lesson11','name': '第11課   主祷文',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -205,7 +204,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'主耶穌感謝祢教導我們禱告.  幫助我不計算別人的惡, 叫我能忘記別人得罪我的事件.  賜我廣大心胸, 叫我能憐憫人, 凡事包容, 體諒, 並饒恕別人.  奉主耶穌的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第12課  憂慮',
+    {'id': 'lesson12','name': '第12課  憂慮',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -223,7 +222,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'天父,感謝祢, 我们能將一切憂慮卸給祢, 因祢顧念我们. 賜我信心專一倚靠祢.  奉主耶穌的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第13課   安息日',
+    {'id': 'lesson13','name': '第13課   安息日',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -241,7 +240,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'天父,感謝祢, 知道人的需要, 為我們設立了安息日, 幫助我們好好利用這一天來敬拜親近祢, 並增取充份的休息, 好讓我們身心靈都健全. 奉耶穌的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第14課   自高 自卑',
+    {'id': 'lesson14','name': '第14課   自高 自卑',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -259,7 +258,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'主耶穌感謝祢, 給我留下美好的榜样.  提醒我不要驕傲, 不要坐首位, 不要領功勞, 幫助我用愛心去関懷去服事有需要, 不幸的人.  奉主耶穌的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第15課   迷失的羊',
+    {'id': 'lesson15','name': '第15課   迷失的羊',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -277,7 +276,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'天父感謝祢, 祢耒尋找我使我归回.  感謝祢当我認罪時祢就赦免我的过 錯.  求祢保守我, 叫我一生跟隨祢, 走在正路上. 奉主耶稣的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第16課     可怕的陰間  ',
+    {'id': 'lesson16','name': '第16課     可怕的陰間  ',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -295,7 +294,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'天父,感謝祢, 讓我們也可以因信稱義, 開我的眼睛, 使我看到失喪的靈魂是要下到陰間永遠受苦的, 賜我愛心與能力, 去把福音傳給還未認識祢的人. 奉主耶穌的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第17課  潔淨痲瘋病人',
+    {'id': 'lesson17','name': '第17課  潔淨痲瘋病人',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -313,7 +312,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'天父,感謝祢, 賜我各样豐富的恩典, 幫助我作一个謝恩的人.  無論是順境或逆境, 都能学習感恩讚美主!  奉主耶穌的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第18課   禱告',
+    {'id': 'lesson18','name': '第18課   禱告',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -331,7 +330,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'天父,感謝祢的应許, 祈求就給我们.  賜我信心和忍耐, 叫我能不断的向祢祷告, 把我的需要帶到祢施恩宝座前.  奉主耶穌的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第19課   改变',
+    {'id': 'lesson19','name': '第19課   改变',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -349,7 +348,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'天父,感謝祢, 拯救了我.  幫助我像撒該一样勇敢認罪, 离棄罪恶, 並在我生命中行公義, 好憐悯, 存謙卑的心与祢同行.  奉主耶穌的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第20課   園戶的比喻',
+    {'id': 'lesson20','name': '第20課   園戶的比喻',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -367,7 +366,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'天父,感謝祢, 將袮的愛子賜給我們, 更感謝袮, 愛中國人.  讓我們能聽 福音.  使用我能成為福音的管道, 繼續將福音傳揚出去.奉主耶穌的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第21課   奉獻',
+    {'id': 'lesson21','name': '第21課   奉獻',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -385,7 +384,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'天父,感謝祢賜我一切所用的, 幫助我学習更多的奉獻, 將祢所賜給我的与人分享.  奉主耶穌的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第22課   彼得的失敗',
+    {'id': 'lesson22','name': '第22課   彼得的失敗',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -403,7 +402,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'天父,感謝祢用無限豐富的恩慈, 寬容和忍耐对待我, 赦免我言語上的过失. 賜我能力勒住我的舌頭. 当我要誇口的時候只指着主誇口.  奉主耶穌的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第23課     不公平的審判',
+    {'id': 'lesson23','name': '第23課     不公平的審判',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
@@ -421,7 +420,7 @@ bibleStudy.controller('LessonListCtrl', function($scope) {
      'pray':'主耶稣,感謝祢为我的罪死, 叫我能得平安, 得医治, 蒙拯救. 奉主耶穌的名求, 啊們.',
      'myResponse':''
     },
-    {'name': '第24課   復活的主',
+    {'id': 'lesson24','name': '第24課   復活的主',
      'question1': '問題 1',
 	 'question2': '問題 2',
 	 'question3': '問題 3',
